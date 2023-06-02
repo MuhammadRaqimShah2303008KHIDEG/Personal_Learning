@@ -1,31 +1,4 @@
-# from fastapi import FastAPI
-# import requests
-# import uvicorn
-# import pandas as pd
-# import boto3
-# app = FastAPI()
-# df = pd.DataFrame()
-# @app.get('api')
-# def get_city_context():
-#     url = f"https://open.er-api.com/v6/latest/USD"
-#     reponse = requests.get(url)
-#     data = reponse.json()
-#     rate = data["rates"]
-#     base_code = data["base_code"]
-#     df = pd.DataFrame(rate,index=[base_code])
-#     df = df.transpose()
-#     # dataframe to parquetfile
-#     df.to_parquet('data.parquet', index=False)
-#     print(df)
-#     df.to_csv('data.csv')
-#     #sending parquetfile to s3
-#     s3 = boto3.client('s3')
-#     bucket_name = 'raqim-module5-day5'
-#     file_name = 'data.parquet'
-#     s3.upload_file(file_name, bucket_name, file_name)
-#     return data
-# if __name__ == "__main__":
-#   uvicorn.run(app, host="0.0.0.0", port=8006)
+#Getting Data from API using FASTAPI and convert data to dataframe than to parquet and upload that data to S3
 
 from fastapi import FastAPI
 import requests
